@@ -15,6 +15,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+# Source0-md5:	222ecf1f2c9b5775e935e48c169dd1f5
 URL:		http://sourceforge.net/projects/kpdfimport/
 BuildRequires:	kdelibs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
