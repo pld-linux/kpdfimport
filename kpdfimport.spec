@@ -18,6 +18,7 @@ Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz
 # Source0-md5:	222ecf1f2c9b5775e935e48c169dd1f5
 URL:		http://sourceforge.net/projects/kpdfimport/
 BuildRequires:	kdelibs-devel
+BuildRequires:	koffice-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -38,26 +39,19 @@ tabulacje) oraz obrazki.
 %setup -q
 
 %build
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-
 %configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-%find_lang %{name} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
-%doc doc
+%doc kpdfimport/README kpdfimport/CHANGELOG kpdfimport/TODO
 %defattr(644,root,root,755)
-# %attr(755,root,root) %{_bindir}/%{name}
-# %{_datadir}/apps/%{name}/*.rc
-# %{_applnkdir}/Applications/%{name}.desktop
-# %{_pixmapsdir}/*/*/apps/%{name}.png
+%{_prefix}/lib/kde3/*
+%{_datadir}/services/*
