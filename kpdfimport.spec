@@ -7,14 +7,14 @@
 #   FilterPage.cpp:568: candidates are: operator ?:(bool, QString, QString) <builtin>
 #   FilterPage.cpp:568:                 operator ?:(bool, const char *, const char *) <builtin>
 
-Summary:	PDF import filter for KOffice (at the moment only for KWord).
-Summary(pl):	Filtr importu pdf dla KOffice (aktualnie tylko dla KWorda).
+Summary:	PDF import filter for KOffice (at the moment only for KWord)
+Summary(pl):	Filtr importu pdf dla KOffice (aktualnie tylko dla KWorda)
 Name:		kpdfimport
 Version:	0.5
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/kpdfimport/%{name}-%{version}.tar.bz2
 # Source0-md5:	222ecf1f2c9b5775e935e48c169dd1f5
 URL:		http://sourceforge.net/projects/kpdfimport/
 BuildRequires:	kdelibs-devel
@@ -22,8 +22,6 @@ BuildRequires:	koffice-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_htmldir	/usr/share/doc/kde/HTML
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 PDF import filter for KOffice (at the moment only for KWord). It
@@ -44,7 +42,9 @@ tabulacje) oraz obrazki.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -53,5 +53,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc kpdfimport/README kpdfimport/CHANGELOG kpdfimport/TODO
 %defattr(644,root,root,755)
-%{_prefix}/lib/kde3/*
+%{_libdir}/kde3/*
 %{_datadir}/services/*
