@@ -1,5 +1,6 @@
 
 # TODO:
+# - fails on sizeof(size_t) != sizeof(unsigned int)
 # Fix build failure (at least with qt 3.0.5
 #   transform.h: warning: 1 trigraph(s) encountered
 #   FilterPage.cpp: In method `void PDFImport::Page::dump(const PDFImport::Paragraph &)':
@@ -17,11 +18,10 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/kpdfimport/%{name}-%{version}.tar.bz2
 # Source0-md5:	222ecf1f2c9b5775e935e48c169dd1f5
 URL:		http://sourceforge.net/projects/kpdfimport/
+BuildRequires:	automake
 BuildRequires:	kdelibs-devel
 BuildRequires:	koffice-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 PDF import filter for KOffice (at the moment only for KWord). It
@@ -37,6 +37,7 @@ tabulacje) oraz obrazki.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.* admin
 %configure
 %{__make}
 
