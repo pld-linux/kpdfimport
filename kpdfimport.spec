@@ -9,7 +9,7 @@
 #   FilterPage.cpp:568:                 operator ?:(bool, const char *, const char *) <builtin>
 
 Summary:	PDF import filter for KOffice (at the moment only for KWord)
-Summary(pl):	Filtr importu pdf dla KOffice (aktualnie tylko dla KWorda)
+Summary(pl.UTF-8):   Filtr importu pdf dla KOffice (aktualnie tylko dla KWorda)
 Name:		kpdfimport
 Version:	0.5
 Release:	0.1
@@ -28,8 +28,8 @@ PDF import filter for KOffice (at the moment only for KWord). It
 currently imports text with formatting (font, color, tabulations) and
 images.
 
-%description -l pl
-Filtr importuj±cy pliki pdf dla pakietu KOffice (aktualnie tylko dla
+%description -l pl.UTF-8
+Filtr importujÄ…cy pliki pdf dla pakietu KOffice (aktualnie tylko dla
 KWord). Aktualnie importuje tekst z formatowaniem (font, kolor,
 tabulacje) oraz obrazki.
 
