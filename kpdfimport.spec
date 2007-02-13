@@ -9,7 +9,7 @@
 #   FilterPage.cpp:568:                 operator ?:(bool, const char *, const char *) <builtin>
 
 Summary:	PDF import filter for KOffice (at the moment only for KWord)
-Summary(pl.UTF-8):   Filtr importu pdf dla KOffice (aktualnie tylko dla KWorda)
+Summary(pl.UTF-8):	Filtr importu pdf dla KOffice (aktualnie tylko dla KWorda)
 Name:		kpdfimport
 Version:	0.5
 Release:	0.1
